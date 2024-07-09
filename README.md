@@ -4,9 +4,9 @@ A web app to control a object using your phone's device gyro/orientation. Connec
 # How to run
 Ensure you have node installed and http-server (can be installed by running `npm install -g http-server`
 
-Update the websocket address to point to your ip address in app.js. You might also want to update the console.log in server.js to match your ip address
+Update the websocket address to point to your ip address in `app.js`. You might also want to update the console.log in `server.js` to match your ip address
 
-Run `node server.js` to start the websocket server
+In one Terminal window, run `node server.js` to start the websocket server
 In a new Terminal, run `http-server <folder-name>` to start a local web server
 
 In a browser on your computer, navigate to the ip address outputted from http-server to load up index.html. You should see a red circle on screen
