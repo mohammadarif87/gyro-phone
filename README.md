@@ -11,7 +11,7 @@ In a new Terminal, run `http-server <folder-name>` to start a local web server
 
 In a browser on your computer, navigate to the ip address outputted from http-server to load up index.html. You should see a red circle on screen
 
-On your phone (connected to the same network as your computer), in a browser like FireFox navigate to the same ip address /phone.html i.e. http://192.168.0.9:8081/phone.html
+On your phone (connected to the same network as your computer), in a browser like FireFox navigate to the same ip address /phone.html i.e. http://172.16.102.112:8081/phone.html
 
 Untested with Safari on phone. Chrome does not seem to work - FireFox seems best
 
