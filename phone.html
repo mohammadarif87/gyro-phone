@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Controller</title>
+    <script src="gyro.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body>
+    <h1>DeviceOrientation</h1>
+    <p id="output">Waiting for data...</p>
+    <div class="container">
+        <button class="button_reset" id="resetButton">Reset Gyro</button>
+    </div>
+
+    <script>
+        const socket = new WebSocket('ws://172.16.102.112:8080');
+
+        socket.onopen = () => {
+            console.log('WebSocket connection established');
+
+            gyro.startTracking(function(o) {
+                const data = {
+                    x: o.x,
+                    y: o.y,
+                    z: o.z,
+                    alpha: o.alpha,
+                    beta: o.beta,
+                    gamma: o.gamma
+                };
+                socket.send(JSON.stringify(data));
+                //console.log('Sent data:', data);
+            });
+        };
+
+        window.addEventListener('deviceorientation', (event) => {
+            const output = document.getElementById('output');
+            const data = `Alpha: ${event.alpha.toFixed(4)}<br>Beta: ${event.beta.toFixed(4)}<br>Gamma: ${event.gamma.toFixed(4)}`;
+            output.innerHTML = data;
+        });
+
+        // Add event listener for reset button
+        document.getElementById('resetButton').addEventListener('click', () => {
+            socket.send(JSON.stringify({ command: 'reset' }));
+        });
+    </script>
+</body>
+</html>
