@@ -1,0 +1,24 @@
+{
+  "name": "gyro-phone",
+  "version": "1.0.0",
+  "description": "Utilise your phone's gyro to move objects on a web app via websocket",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammadarif87/gyro-phone.git"
+  },
+  "author": "Mohammad Arif",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammadarif87/gyro-phone/issues"
+  },
+  "homepage": "https://github.com/mohammadarif87/gyro-phone#readme",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "ws": "^8.18.0"
+  }
+}

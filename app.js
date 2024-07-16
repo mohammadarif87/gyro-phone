@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://172.16.102.112:8080');
+const socket = new WebSocket('ws://192.168.0.9:8080');
 
 const circle = document.getElementById('circle');
 if (!circle) {
@@ -65,7 +65,7 @@ socket.onmessage = (event) => {
         const adjustedBeta = beta - initialBeta;
 
         // The value to multiply the movement speed by
-        const sensitivity = 0.75; // Increased for testing
+        const sensitivity = 0.5; // Increased for testing
 
         // Update the position based on orientation data if they are above the threshold
         if (Math.abs(adjustedAlpha) > threshold) {
