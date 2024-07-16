@@ -14,7 +14,7 @@ let initialAlpha = null;
 let initialBeta = null;
 
 // threshold is the gap to check slowdown so the pointer doesn't drift off
-const threshold = 0.35; 
+const threshold = 0.5; 
 
 socket.onopen = () => {
     console.log('WebSocket connection established');
@@ -65,7 +65,7 @@ socket.onmessage = (event) => {
         const adjustedBeta = beta - initialBeta;
 
         // The value to multiply the movement speed by
-        const sensitivity = 0.5; // Increased for testing
+        const sensitivity = 0.9; // Increased for testing
 
         // Update the position based on orientation data if they are above the threshold
         if (Math.abs(adjustedAlpha) > threshold) {
